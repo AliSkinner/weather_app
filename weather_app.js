@@ -1,9 +1,6 @@
 const yargs = require('yargs');
 const axios = require('axios');
 
-const API_KEY = '';
-const API_URL = `https://api.darksky.net/forecast/${API_KEY}`;
-
 const argv = yargs
     .options({
       a: {
@@ -11,11 +8,20 @@ const argv = yargs
         alias: 'address',
         describe: 'Address to fetch weather for',
         string: true
+      },
+      k: {
+        demand: true,
+        alias: 'key',
+        describe: 'API key for the Forcast.io',
+        string: true
       }
     })
     .help()
     .alias('help', 'h')
     .argv;
+
+const API_KEY = argv.key;
+const API_URL = `https://api.darksky.net/forecast/${API_KEY}`;
 
 let encodedAddress = encodeURIComponent(argv.address);
 let geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`;
