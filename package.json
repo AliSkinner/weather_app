@@ -1,0 +1,15 @@
+{
+  "name": "weather_app",
+  "version": "1.0.0",
+  "description": "Command-line app that returns weather conditions for given address",
+  "main": "weather_app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ali Skinner",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "yargs": "^7.0.2"
+  }
+}
